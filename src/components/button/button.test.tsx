@@ -13,7 +13,7 @@ const testProps: ButtonProps = {
 
 const disabledProps: ButtonProps = {
   disabled: true,
-  onClick: jest.fn(),
+  onClick: jest.fn()
 }
 describe('test Button component', () => {
   it('should render the correct default button', () => {
@@ -33,7 +33,11 @@ describe('test Button component', () => {
     expect(element).toHaveClass('btn-primary btn-lg klass')
   })
   it('should render a link when btnType equals link and href is provided', () => {
-    const wrapper = render(<Button btnType='link' href="http://dummyurl">Link</Button>)
+    const wrapper = render(
+      <Button btnType="link" href="http://dummyurl">
+        Link
+      </Button>
+    )
     const element = wrapper.getByText('Link')
     expect(element).toBeInTheDocument()
     expect(element.tagName).toEqual('A')

@@ -23,7 +23,7 @@ export const Button: FC<ButtonProps> = (props) => {
   const classes = classNames('btn', className, {
     [`btn-${btnType}`]: btnType,
     [`btn-${size}`]: size,
-    disabled: btnType === 'link' && disabled,
+    disabled: btnType === 'link' && disabled
   })
   if (btnType === 'link' && href) {
     return (
@@ -42,7 +42,7 @@ export const Button: FC<ButtonProps> = (props) => {
 
 Button.defaultProps = {
   disabled: false,
-  btnType: 'default',
+  btnType: 'default'
 }
 
 export default Button

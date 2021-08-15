@@ -3,8 +3,8 @@ module.exports = {
   env: {
     node: true
   },
+  extends: ['react-app', 'react-app/jest', 'plugin:prettier/recommended'],
   rules: {
-    '@typescript-eslint/no-unused-vars': 'off'
-  },
-  extends: ['react-app', 'react-app/jest', 'prettier']
+    '@typescript-eslint/no-unused-vars': 'warn'
+  }
 }

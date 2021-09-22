@@ -1,48 +1,60 @@
 import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react'
-import classNames from 'classnames'
+import classnames from 'classnames'
 
-export type ButtonSize = 'lg' | 'sm'
-export type ButtonType = 'primary' | 'default' | 'danger' | 'link'
+export enum ButtonSize {
+  large = 'large',
+  small = 'small'
+}
+
+export enum ButtonType {
+  primary = 'primary',
+  default = 'default',
+  danger = 'danger',
+  link = 'link'
+}
 
 interface BaseButtonProps {
   className?: string
   disabled?: boolean
   size?: ButtonSize
   btnType?: ButtonType
-  children: React.ReactNode
+  children?: React.ReactNode
   href?: string
 }
+
+// type ButtonNativeType = BaseButtonProps & React.ButtonHTMLAttributes<HTMLElement>
+// type AnchorButtonType = BaseButtonProps & React.AnchorHTMLAttributes<HTMLElement>
+
+// // Partial將所有屬性都變成可選的
+// export type ButtonProp = Partial<ButtonNativeType & AnchorButtonType>
 type NativeButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLElement>
 type AnchorButtonProps = BaseButtonProps & AnchorHTMLAttributes<HTMLElement>
-export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
+export type ButtonProps = NativeButtonProps & AnchorButtonProps
 
-export const Button: FC<ButtonProps> = (props) => {
-  const { btnType, className, disabled, size, children, href, ...restProps } =
-    props
-  // btn, btn-lg, btn-primary
-  const classes = classNames('btn', className, {
+const Button: FC<ButtonProps> = (props) => {
+  const { disabled, size, btnType, children, href, className, ...restProps } = props
+  const classes = classnames('btn', 'className', {
     [`btn-${btnType}`]: btnType,
     [`btn-${size}`]: size,
     disabled: btnType === 'link' && disabled
   })
-  if (btnType === 'link' && href) {
+  if (btnType === ButtonType.link) {
     return (
       <a className={classes} href={href} {...restProps}>
         {children}
       </a>
     )
-  } else {
-    return (
-      <button className={classes} disabled={disabled} {...restProps}>
-        {children}
-      </button>
-    )
   }
+  return (
+    <button className={classes} disabled={disabled} {...restProps}>
+      {children}
+    </button>
+  )
 }
 
 Button.defaultProps = {
   disabled: false,
-  btnType: 'default'
+  btnType: ButtonType.default
 }
 
 export default Button

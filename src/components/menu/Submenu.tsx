@@ -4,6 +4,7 @@ import { IMenuItemProps } from './MenuItem'
 import { MenuContext } from './Menu'
 
 import Icon from '../icon'
+import Transition from '../transition/Transition'
 
 import classNames from 'classnames'
 
@@ -23,6 +24,7 @@ const renderSubMenu = (
   const classes = classNames('base-submenu', {
     'is-open': isOpen
   })
+
   const renderChildren = (children: React.ReactNode) => {
     const menuItemIndex: string[] = []
     const childrenComponent = React.Children.map(children, (child, subIndex) => {
@@ -41,7 +43,12 @@ const renderSubMenu = (
     updateChildIndex(menuItemIndex)
     return childrenComponent
   }
-  return <ul className={classes}>{renderChildren(children)}</ul>
+
+  return (
+    <Transition in={isOpen} timeout={500} animation="zoom-in-top">
+      <ul className={classes}>{renderChildren(children)}</ul>
+    </Transition>
+  )
 }
 
 const SubMenu: React.FC<ISubMenuProps> = (props) => {
@@ -51,8 +58,6 @@ const SubMenu: React.FC<ISubMenuProps> = (props) => {
   const defaultOpenSubMenus = context.defaultOpenSubMenus as string[]
   const defaultOpen =
     index && context.mode === 'vertical' ? defaultOpenSubMenus.includes(index) : false
-
-  console.log(defaultOpen)
 
   const [isOpen, setIsOpen] = useState(defaultOpen)
   const [isActive, setIsAcitve] = useState(false)

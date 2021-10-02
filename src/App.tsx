@@ -1,15 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button, { ButtonSize, ButtonType } from './components/button/Button'
 import Menu from './components/menu/Menu'
 import MenuItem from './components/menu/MenuItem'
 import SubMenu from './components/menu/Submenu'
 import Icon from './components/icon'
+import Transition from './components/transition/Transition'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 library.add(fas)
 
 function App() {
+  const [show, setShow] = useState(false)
+
   return (
     <div className="App">
       <Icon icon="arrow-down" theme="danger" size="10x" />
@@ -18,7 +21,7 @@ function App() {
         onSelect={(index) => {
           // console.log(index)
         }}
-        mode="vertical"
+        mode="horizontal"
         defaultIndex="subMenu-acitve"
       >
         <MenuItem index="acitve">active</MenuItem>
@@ -32,7 +35,7 @@ function App() {
       </Menu>
 
       {/* button */}
-      <Button autoFocus size={ButtonSize.large} btnType={ButtonType.primary}>
+      <Button onClick={() => setShow(!show)} size={ButtonSize.large} btnType={ButtonType.primary}>
         我是按鈕
       </Button>
       <Button size={ButtonSize.small} btnType={ButtonType.link}>
@@ -50,9 +53,17 @@ function App() {
       <Button size={ButtonSize.large} btnType={ButtonType.link}>
         我是連結
       </Button>
-      <Button size={ButtonSize.large} btnType={ButtonType.link} disabled>
-        我是連結
-      </Button>
+      <Transition animation="zoom-in-bottom" in={show} timeout={300} wrapper>
+        <Button size={ButtonSize.large} btnType={ButtonType.link} disabled>
+          我是連結
+        </Button>
+      </Transition>
+
+      <Transition animation="zoom-in-bottom" in={show} timeout={300}>
+        <p>4848484</p>
+        <p>4848484</p>
+        <p>4848484</p>
+      </Transition>
     </div>
   )
 }

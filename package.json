@@ -14,6 +14,7 @@
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@types/react-transition-group": "^4.4.3",
     "classnames": "^2.3.1",
     "node-sass": "^6.0.1",
     "normalize.css": "^8.0.1",
@@ -31,7 +32,9 @@
     "eject": "react-scripts eject",
     "prettier": "prettier --write .",
     "prepare": "husky install",
-    "commit": "cz"
+    "commit": "cz",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "browserslist": {
     "production": [
@@ -48,6 +51,12 @@
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
+    "@storybook/addon-actions": "^6.3.9",
+    "@storybook/addon-essentials": "^6.3.9",
+    "@storybook/addon-links": "^6.3.9",
+    "@storybook/node-logger": "^6.3.9",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.3.9",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.2.0",
     "eslint-config-prettier": "^8.3.0",
@@ -63,5 +72,17 @@
   },
   "lint-staged": {
     "*.{js,css,md,ts,tsx}": "prettier --write"
+  },
+  "eslintConfig": {
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
   }
 }

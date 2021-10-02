@@ -6,5 +6,6 @@ module.exports = {
   extends: ['react-app', 'react-app/jest', 'prettier'],
   rules: {
     '@typescript-eslint/no-unused-vars': 'warn'
+    // '@typescript-eslint/array-bracket-spacing': ['always']
   }
 }

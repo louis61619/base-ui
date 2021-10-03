@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Button, { ButtonSize, ButtonType } from './components/button/Button'
 import Menu from './components/menu/Menu'
 import MenuItem from './components/menu/MenuItem'
 import SubMenu from './components/menu/Submenu'
@@ -33,31 +32,6 @@ function App() {
           <MenuItem index="subMenu-default">default</MenuItem>
         </SubMenu>
       </Menu>
-
-      {/* button */}
-      <Button onClick={() => setShow(!show)} size={ButtonSize.large} btnType={ButtonType.primary}>
-        我是按鈕
-      </Button>
-      <Button size={ButtonSize.small} btnType={ButtonType.link}>
-        我是連結
-      </Button>
-      <Button size={ButtonSize.small} btnType={ButtonType.primary} disabled>
-        我是連結
-      </Button>
-      <Button size={ButtonSize.large} btnType={ButtonType.danger}>
-        我是連結
-      </Button>
-      <Button size={ButtonSize.large} btnType={ButtonType.default}>
-        我是連結
-      </Button>
-      <Button size={ButtonSize.large} btnType={ButtonType.link}>
-        我是連結
-      </Button>
-      <Transition animation="zoom-in-bottom" in={show} timeout={300} wrapper>
-        <Button size={ButtonSize.large} btnType={ButtonType.link} disabled>
-          我是連結
-        </Button>
-      </Transition>
 
       <Transition animation="zoom-in-bottom" in={show} timeout={300}>
         <p>4848484</p>

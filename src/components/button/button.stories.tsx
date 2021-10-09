@@ -24,7 +24,7 @@ Default.storyName = 'default'
 
 export const AllTypeButton: Story = () => {
   return (
-    <div className="button-group">
+    <div className="group">
       <Button btnType="default">Button</Button>
       <Button btnType="primary">Button</Button>
       <Button btnType="danger">Button</Button>
@@ -36,7 +36,7 @@ AllTypeButton.storyName = 'all type button'
 
 export const AllTypAndDisabledButton: Story = () => {
   return (
-    <div className="button-group">
+    <div className="group">
       <Button disabled btnType="default">
         Button
       </Button>
@@ -56,7 +56,7 @@ AllTypAndDisabledButton.storyName = 'all type disabled button'
 
 export const AllSizeButton: Story = () => {
   return (
-    <div className="button-group">
+    <div className="group">
       <Button size="large">Button</Button>
       <Button>Button</Button>
       <Button size="small">Button</Button>

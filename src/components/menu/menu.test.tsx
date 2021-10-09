@@ -61,6 +61,6 @@ describe('test menu and menuItem component', () => {
   it('should render vertical mode when prop set mode vertical', () => {
     // 清除beforeEach
     // cleanup()
-    expect(menuElement).toHaveClass('base-menu_vertical')
+    expect(menuElement).toHaveClass('base-menu-vertical')
   })
 })

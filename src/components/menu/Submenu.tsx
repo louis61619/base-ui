@@ -3,7 +3,7 @@ import React, { useContext, useState, cloneElement, useRef, useEffect } from 're
 import { IMenuItemProps } from './MenuItem'
 import { MenuContext } from './Menu'
 
-import Icon from '../icon'
+import Icon from '../icon/Icon'
 import Transition from '../transition/Transition'
 
 import classNames from 'classnames'
@@ -45,7 +45,7 @@ const renderSubMenu = (
   }
 
   return (
-    <Transition in={isOpen} timeout={500} animation="zoom-in-top">
+    <Transition in={true} timeout={500} animation="zoom-in-top">
       <ul className={classes}>{renderChildren(children)}</ul>
     </Transition>
   )

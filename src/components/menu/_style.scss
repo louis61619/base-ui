@@ -98,7 +98,7 @@
 }
 
 // 水平的
-.base-menu_horizontal {
+.base-menu-horizontal {
   > .base-menu-item {
     border-bottom: $menu-item-active-border-width solid transparent;
   }
@@ -114,7 +114,7 @@
 }
 
 // 直立的
-.base-menu_vertical {
+.base-menu-vertical {
   flex-direction: column;
   // border-bottom: $menu-border-width solid transparent;
   border-bottom: 0px;

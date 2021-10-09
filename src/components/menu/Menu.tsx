@@ -56,8 +56,8 @@ const Menu: FC<IMenuProps> = (props) => {
   } = props
   const [currentIndex, setCurrentIndex] = useState(defaultIndex)
   const classes = classNames('base-menu', classname, {
-    'base-menu_vertical': mode === 'vertical',
-    'base-menu_horizontal': mode === 'horizontal'
+    'base-menu-vertical': mode === 'vertical',
+    'base-menu-horizontal': mode === 'horizontal'
   })
 
   const handleSelect = (index: string) => {

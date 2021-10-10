@@ -45,7 +45,7 @@ const renderSubMenu = (
   }
 
   return (
-    <Transition in={true} timeout={500} animation="zoom-in-top">
+    <Transition in={isOpen} timeout={500} animation="zoom-in-top">
       <ul className={classes}>{renderChildren(children)}</ul>
     </Transition>
   )

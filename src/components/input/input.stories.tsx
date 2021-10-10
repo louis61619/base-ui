@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { ComponentStory, ComponentMeta, Story } from '@storybook/react'
 
 import Input from './Input'

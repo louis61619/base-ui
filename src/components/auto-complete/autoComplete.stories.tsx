@@ -1,5 +1,5 @@
 import React from 'react'
-import { ComponentStory, ComponentMeta, Story } from '@storybook/react'
+import { ComponentMeta, Story } from '@storybook/react'
 import AutoComplete, { DataSourceType } from './AutoComplete'
 
 interface GithubUserProps {
@@ -13,35 +13,34 @@ export default {
   component: AutoComplete
 } as ComponentMeta<typeof AutoComplete>
 
-const Template: ComponentStory<typeof AutoComplete> = (args) => {
-  const lakers = [
-    'bradley',
-    'pope',
-    'caruso',
-    'cook',
-    'cousins',
-    'james',
-    'AD',
-    'green',
-    'howard',
-    'kuzma',
-    'McGee',
-    'rando'
-  ]
+// const Template: ComponentStory<typeof AutoComplete> = (args) => {
+//   const lakers = [
+//     'bradley',
+//     'pope',
+//     'caruso',
+//     'cook',
+//     'cousins',
+//     'james',
+//     'AD',
+//     'green',
+//     'howard',
+//     'kuzma',
+//     'McGee',
+//     'rando'
+//   ]
 
-  const handleFetch = (query: string) => {
-    const list = lakers.filter((name) => name.includes(query)).map((name) => ({ value: name }))
-    return list
-  }
-  // const [value, setValue] = useState(args.value ?? '')
-  return <AutoComplete {...args} fetchSuggestions={handleFetch} />
-}
+//   const handleFetch = (query: string) => {
+//     const list = lakers.filter((name) => name.includes(query)).map((name) => ({ value: name }))
+//     return list
+//   }
+//   // const [value, setValue] = useState(args.value ?? '')
+//   return <AutoComplete {...args} fetchSuggestions={handleFetch} />
+// }
 
-export const Default = Template.bind({})
-Default.args = {
-  // fetchSuggestions: handleFetch,
-  value: ''
-}
+// export const Default = Template.bind({})
+// Default.args = {
+//   value: ''
+// }
 
 export const ControlAutoComplete: Story = () => {
   // const lakers = [

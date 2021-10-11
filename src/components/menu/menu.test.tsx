@@ -51,11 +51,11 @@ describe('test menu and menuItem component', () => {
     expect(thirdItem).toHaveClass('is-active')
     expect(activeElement).not.toHaveClass('is-active')
     // 會回調index
-    expect(testProps.onSelect).toHaveBeenCalledWith(2)
+    expect(testProps.onSelect).toHaveBeenCalledWith('2')
     // 測試disabled
     fireEvent.click(disabledElement)
     expect(disabledElement).not.toHaveClass('is-active')
-    expect(testProps.onSelect).not.toHaveBeenCalledWith(1)
+    expect(testProps.onSelect).not.toHaveBeenCalledWith('1')
   })
 
   it('should render vertical mode when prop set mode vertical', () => {

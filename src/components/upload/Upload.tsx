@@ -194,8 +194,8 @@ const Upload: React.FC<IUploadProps> = (props) => {
           accept={accept}
           multiple={multiple}
         ></input>
-        <UploadList fileList={fileList} onRemove={handleRemove} />
       </div>
+      <UploadList fileList={fileList} onRemove={handleRemove} />
     </div>
   )
 }

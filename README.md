@@ -2,7 +2,7 @@
 
 this is a react components ui library, written in TypeScript with predictable static types.
 
-![demo](https://louis61619.github.io/base-ui/?path=/story/introduction--page)
+[demo](https://louis61619.github.io/base-ui/?path=/story/introduction--page)
 
 ## Install
 

@@ -28,7 +28,7 @@ jobs:
       - name: yarn install
         run: |
           yarn install
-      - name: npm run build-storybook
+      - name: run build-storybook
         run: |
           yarn run build-storybook
       - name: Commit files

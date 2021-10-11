@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { ComponentMeta, Story } from '@storybook/react'
 import Transition from './Transition'
-import Button from '../button/Button'
+import Button from '../button'
 
 export default {
   title: 'Components/Transition',

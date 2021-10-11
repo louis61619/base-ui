@@ -7,6 +7,16 @@ module.exports = {
     '@storybook/addon-essentials',
     // '@storybook/preset-create-react-app',
     '@storybook/preset-scss'
+    // '@storybook/addon-docs'
+    // {
+    //   name: '@storybook/addon-docs',
+    //   options: {
+    //     // configureJSX: true,
+    //     // babelOptions: {},
+    //     // sourceLoaderOptions: null,
+    //     transcludeMarkdown: true
+    //   }
+    // }
   ]
   // webpackFinal: async (config) => {
   //   config.resolve.modules = [...(config.resolve.modules || []), path.resolve('./')]

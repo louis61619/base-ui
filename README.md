@@ -10,6 +10,8 @@ this is a react components ui library, written in TypeScript with predictable st
 npm i lcl-ui
 ```
 
+or
+
 ```shell
 yarn add lcl-ui
 ```

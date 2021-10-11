@@ -9,10 +9,7 @@ module.exports = {
     '@storybook/preset-scss'
   ],
   webpackFinal: async (config) => {
-    config.resolve.modules = [
-      path.resolve(__dirname, '..', 'src'),
-      path.resolve(__dirname, '..', 'node_modules')
-    ]
+    config.resolve.modules = [path.resolve(__dirname, '..', 'src'), 'node_modules']
 
     return config
   }

@@ -1,4 +1,4 @@
-const path = require('path')
+// const path = require('path')
 
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
@@ -7,9 +7,16 @@ module.exports = {
     '@storybook/addon-essentials',
     // '@storybook/preset-create-react-app',
     '@storybook/preset-scss'
-  ],
-  webpackFinal: async (config) => {
-    config.resolve.modules = [...(config.resolve.modules || []), path.resolve('./')]
-    return config
-  }
+  ]
+  // webpackFinal: async (config) => {
+  //   config.resolve.modules = [...(config.resolve.modules || []), path.resolve('./')]
+  //   return config
+  // }
+  // webpackFinal: async (config, { configType }) => {
+  //   config.resolve.alias = {
+  //     ...config.resolve.alias,
+  //     packages: path.resolve(__dirname, '../src/components')
+  //   }
+  //   return config
+  // }
 }

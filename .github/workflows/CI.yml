@@ -30,7 +30,7 @@ jobs:
           yarn install
       - name: run build-storybook
         run: |
-          npm run build-storybook
+          yarn run build-storybook
       - name: Commit files
         run: |
           cd $PUBLISH_DIR

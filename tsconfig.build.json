@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    // 打包位置
+    "outDir": "dist",
+    // 使用哪種模組化
+    "module": "esnext",
+    // bebel編譯
+    "target": "es5",
+    // 類型支持
+    "declaration": true,
+    "jsx": "react",
+    // 使用node方式查找文件
+    "moduleResolution": "node",
+    // 支持default import
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["src"],
+  "exclude": [
+    "src/**/*.test.tsx",
+    "src/**/*stories.tsx",
+    "src/setupTests.ts",
+    "src/reportWebVitals.ts"
+  ]
+}

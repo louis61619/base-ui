@@ -28,14 +28,17 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prettier": "prettier --write .",
     "prepare": "husky install",
     "commit": "cz",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "clean": "rimraf ./dist",
+    "build-ts": "tsc -p tsconfig.build.json",
+    "build-css": "node-sass ./src/styles/index.scss ./dist/index.css",
+    "build": "npm run clean && npm run build-ts && npm run build-css"
   },
   "browserslist": {
     "production": [
@@ -68,6 +71,7 @@
     "husky": "^7.0.0",
     "lint-staged": "^11.1.2",
     "prettier": "^2.3.2",
+    "rimraf": "^3.0.2",
     "sass": "^1.42.1",
     "sass-loader": "10.1.1",
     "style-loader": "2.0.0"

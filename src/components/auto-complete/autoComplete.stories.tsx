@@ -114,16 +114,10 @@ export const ControlAutoComplete: Story = () => {
   }
 
   return (
-    <AutoComplete
-      fetchSuggestions={handleFetch}
-      onSelect={(item) => {
-        console.log(item)
-      }}
-      renderOption={renderOption}
-    />
+    <AutoComplete fetchSuggestions={handleFetch} placeholder="Search" renderOption={renderOption} />
   )
 }
-ControlAutoComplete.storyName = 'control auto complete'
+ControlAutoComplete.storyName = 'async auto complete'
 
 // type IFoo = <T>(item: DataSourceType<T>) => void
 

@@ -3,9 +3,10 @@ module.exports = {
   env: {
     node: true
   },
-  extends: ['react-app', 'react-app/jest', 'prettier'],
+  extends: ['react-app', 'react-app/jest', 'plugin:prettier/recommended'],
   rules: {
-    '@typescript-eslint/no-unused-vars': 'warn'
-    // '@typescript-eslint/array-bracket-spacing': ['always']
+    '@typescript-eslint/no-unused-vars': 'warn',
+    'prettier/prettier': 'warn'
+    // 'react-hooks/exhaustive-deps': 'off'
   }
 }
